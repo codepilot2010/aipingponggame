@@ -1,0 +1,39 @@
+
+.button_1
+{
+    font-family: "Ojuju", sans-serif;
+    font-size: 20px;
+    color: aquamarine;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.instructions
+{
+    font-family: "Ojuju", sans-serif;
+    font-size: 20px;
+    color: aquamarine;
+    background-color: royalblue;
+    border-radius: 5px;
+
+}
+
+.heading
+{
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    font-family: "Ojuju", sans-serif;
+    color: aquamarine;
+}
+
+.heading h3
+{
+    display:inline;
+}
+
+.heading button
+{
+    float:right;
+    border: 1px solid white;
+}
