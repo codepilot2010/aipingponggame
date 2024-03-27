@@ -24,10 +24,36 @@
               </div>
             <br><br><br>
             <button class="button_1" onclick="startGame()">Play Game</button>
+            <br> <br> <button onclick="restart()" class="button_1">Restart</button>
             <br><br>
             <h3 id="status" class="btn btn-primary"></h3>
             <br><br><br>
             <div id="canvas"></div>
+            <br><br>
+           
+
+            <div id="mymodel" class="modal  fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button class="close" data-dismiss="modal">&times;</button>
+                      <h4>Instructions</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table>
+                            <ol>
+                                <li>If you move your nose up, the paddle will move up.</li>
+                                <li>If you move your nose down, paddle will move down.</li>
+                                <li>This game is multiplayer. One player will be you and the other player is the AI.</li>
+                                </ol>
+                        </table>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h4>Developed by : Harshit Malhotra </h4>
         </center>
 
         <script src="main.js"></script>

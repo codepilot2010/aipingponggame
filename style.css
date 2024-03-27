@@ -37,3 +37,15 @@
     float:right;
     border: 1px solid white;
 }
+
+h4{
+    background-color: aqua;
+    line-height: 2;
+    margin: 0px;
+}
+
+ol{
+    text-align: left;
+    color: royalblue;
+font-size: 22px;
+}
