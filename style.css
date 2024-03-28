@@ -49,3 +49,9 @@ ol{
     color: royalblue;
 font-size: 22px;
 }
+canvas
+{
+    border-radius: 10px;
+    border-color: royalblue;
+    box-shadow: 5px 5px 5px aquamarine;
+}
