@@ -1,6 +1,9 @@
 
 /*created by prashant shukla */
-video="";
+game_status="";
+rightwristx=0;
+rightwristy=0;
+rightwristscore=0;
 var paddle2 =10,paddle1=10;
 
 var paddle1X = 10,paddle1Height = 110;
@@ -29,6 +32,21 @@ function setup(){
   video.hide()
   video.parent('canvas');
   poseNet= ml5.poseNet(video,modelLoaded);
+  poseNet.on('pose',gotPoses);
+}
+
+function gotPoses(results)
+{
+	if(results.length>0)
+	{
+    console.log(results);
+		rightwristx=results[0].pose.rightWrist.x;
+		rightwristy=results[0].pose.rightWrist.y;
+    rightwristscore=results[0].pose.keypoints[10].score;
+		console.log("right wrist x is"+rightwristx);
+    console.log("right wrist y is"+rightwristy);
+    console.log("right wrist score is"+rightwristscore);
+	}
 }
 
 function modelLoaded()
@@ -36,13 +54,34 @@ function modelLoaded()
   console.log("model is loaded")
 }
 
+function startGame()
+{
+  game_start="start";
+  document.getElementById("status").innerHTML="Game is loaded";
+}
+
+function restart()
+{
+
+}
+
 function draw(){
+
+  if(game_status=="start")
+  {
 
  background(0); 
 image(video,0,0,700,600);
  fill("black");
  stroke("black");
  rect(680,0,20,700);
+
+ if(rightwristscore>0.2)
+{
+  fill("#7FFFD4");
+  stroke("#F5F5DC");
+  circle(rightwristx,rightwristy,25)
+}
 
  fill("black");
  stroke("black");
@@ -57,6 +96,8 @@ image(video,0,0,700,600);
     strokeWeight(0.5);
    paddle1Y = mouseY; 
    rect(paddle1X,paddle1Y,paddle1,paddle1Height,100);
+
+   
    
    
     //pc computer paddle
@@ -75,6 +116,7 @@ image(video,0,0,700,600);
    
    //function move call which in very important
     move();
+  }
 }
 
 
